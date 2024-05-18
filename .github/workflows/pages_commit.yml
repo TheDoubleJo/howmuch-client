@@ -1,0 +1,22 @@
+name: pages
+on:
+  push
+
+jobs:
+  build:
+    name: build
+    runs-on: node
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: build
+        working-directory: ./howmuch-client
+        run: |
+          npm run build
+
+      - name: git
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git subtree push --prefix howmuch-client/dist origin gh-pages
