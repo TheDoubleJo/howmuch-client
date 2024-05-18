@@ -31,4 +31,4 @@ jobs:
           git config user.email "<>"
           git add -f howmuch-client/dist
           git commit -m "Publish dist"
-          git subtree push --prefix howmuch-client/dist origin gh-pages
+          git subtree push --force --prefix howmuch-client/dist origin gh-pages
