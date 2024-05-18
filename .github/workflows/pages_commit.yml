@@ -29,4 +29,6 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
+          git add howmuch-client/dist
+          git commit -m "Publish dist"
           git subtree push --prefix howmuch-client/dist origin gh-pages
