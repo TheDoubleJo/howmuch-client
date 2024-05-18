@@ -10,10 +10,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: install
+        working-directory: ./howmuch-client
+        run: |
+          npm install
+
       - name: build
         working-directory: ./howmuch-client
         run: |
-          npm run build
+            npm run build
 
       - name: git
         run: |
