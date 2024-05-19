@@ -32,6 +32,7 @@ jobs:
           git config --global user.email "<>"
           git config --global user.password ${{ github.token }}
           git init
+          git commit -m "Publish dist"
           git add .
           git commit -m "Publish dist"
           git push --force ${{ github.repositoryUrl }} gh-pages
