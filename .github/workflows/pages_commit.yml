@@ -20,6 +20,15 @@ jobs:
         run: |
           npm install
 
+      - name: git clone
+        working-directory: ./howmuch-client
+        run: |
+          mkdir dist
+          cd dist
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "<>"
+          git clone -n -b gh-pages ${{ github.repositoryUrl }}
+
       - name: build
         working-directory: ./howmuch-client
         run: |
@@ -28,11 +37,6 @@ jobs:
       - name: git push
         working-directory: ./howmuch-client/dist
         run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "<>"
-          git config --global user.password ${{ github.token }}
-          git init
           git add .
           git commit -m "Publish dist"
-          git remote add origin https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
-          git push --force origin origin/gh-pages
+          git push --force
