@@ -33,4 +33,4 @@ jobs:
           git init
           git add -A
           git commit -m 'Publish dist'
-          git push -f https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git main:gh-pages
+          git push -f https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git master:gh-pages
