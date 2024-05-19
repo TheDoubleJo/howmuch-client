@@ -35,5 +35,5 @@ jobs:
           git add .
           git commit -m "Publish dist"
           git remote add origin ${{ github.repositoryUrl }}
-          git push --force gh-pages
+          git push --force origin gh-pages
           echo "step 10"
