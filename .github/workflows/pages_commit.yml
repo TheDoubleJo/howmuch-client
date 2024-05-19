@@ -35,10 +35,6 @@ jobs:
           git init
           echo "step 2"
           git status
-          echo "step 3"
-          git commit -m "Publish dist"
-          echo "step 4"
-          git status
           echo "step 5"
           git add .
           echo "step 6"
