@@ -33,16 +33,20 @@ jobs:
           git config --global user.password ${{ github.token }}
           echo "step 1"
           git init
-          git status
-          echo "step 1"
-          git commit -m "Publish dist"
-          git status
           echo "step 2"
-          git add .
           git status
           echo "step 3"
           git commit -m "Publish dist"
-          git status
           echo "step 4"
-          git push --force ${{ github.repositoryUrl }} gh-pages
+          git status
           echo "step 5"
+          git add .
+          echo "step 6"
+          git status
+          echo "step 7"
+          git commit -m "Publish dist"
+          echo "step 8"
+          git status
+          echo "step 9"
+          git push --force ${{ github.repositoryUrl }} gh-pages
+          echo "step 10"
