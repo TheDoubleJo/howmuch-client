@@ -26,9 +26,11 @@ jobs:
           npm run build
 
       - name: git push
+        working-directory: ./howmuch-client/dist
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
-          git add -f howmuch-client/dist
+          git init
+          git add .
           git commit -m "Publish dist"
-          git subtree push --force --prefix howmuch-client/dist origin gh-pages
+          git push --force ${{ github.repositoryUrl }} gh-pages
