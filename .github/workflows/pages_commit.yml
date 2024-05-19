@@ -27,6 +27,7 @@ jobs:
           cd dist
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "<>"
+          git config --global url.https://github.com/.insteadOf git://github.com/
           git clone -n -b gh-pages ${{ github.repositoryUrl }}
 
       - name: build
