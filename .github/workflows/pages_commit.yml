@@ -31,8 +31,18 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "<>"
           git config --global user.password ${{ github.token }}
+          echo "step 1"
           git init
+          git status
+          echo "step 1"
           git commit -m "Publish dist"
+          git status
+          echo "step 2"
           git add .
+          git status
+          echo "step 3"
           git commit -m "Publish dist"
+          git status
+          echo "step 4"
           git push --force ${{ github.repositoryUrl }} gh-pages
+          echo "step 5"
