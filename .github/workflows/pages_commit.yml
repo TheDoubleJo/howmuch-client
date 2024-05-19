@@ -28,8 +28,9 @@ jobs:
       - name: git push
         working-directory: ./howmuch-client/dist
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "<>"
+          git config --global user.password ${{ github.token }}
           git init
           git add .
           git commit -m "Publish dist"
