@@ -38,6 +38,6 @@ jobs:
       - name: git push
         working-directory: ./howmuch-client/dist
         run: |
-          git add .
+          git add -f .
           git commit -m "Publish dist"
           git push --force
